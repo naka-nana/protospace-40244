@@ -1,7 +1,6 @@
 class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
-    @comment.text = params[:comment][:content] # コメントの内容を設定
 
     if @comment.save
       redirect_to prototype_path(@comment.prototype)
